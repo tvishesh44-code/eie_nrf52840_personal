@@ -173,3 +173,16 @@ After this is run once:
 
 will automatically use origin/lesson2 without needing to specify the remote or branch.
 
+git diff
+--------
+Shows the differences between files in the working directory, staging area, and commits.
+
+Common usage:
+- git diff
+  Shows changes that are not yet staged.
+- git diff --staged
+  Shows changes that have been staged and will be included in the next commit.
+
+Notes:
+- Useful for reviewing changes before staging or committing.
+- Output shows line-by-line additions and deletions.
