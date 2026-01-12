@@ -27,9 +27,11 @@ int main(void) {
     if (ret < 0) {
         return ret;
     }
-    
-    while (1) {
 
+    while (1) {
+        gpio_pin_toggle_dt(&led0);
+
+        k_msleep(1000);
     }
 
     return 0;
