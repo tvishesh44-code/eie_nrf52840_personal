@@ -1,0 +1,117 @@
+Git Cheatsheet – EiE
+
+git commit
+-----------
+Creates a snapshot of the currently staged changes and adds it to the repository history.
+
+Common usage:
+- git commit -m "message"
+  Creates a commit with a short commit message.
+- git commit
+  Opens a text editor to write a longer commit message.
+
+Behavior change:
+- With -m, no editor opens.
+- Without -m, Git opens an editor for the message.
+
+
+git branch
+-----------
+Used to list, create, or delete branches.
+
+Common usage:
+- git branch
+  Lists all local branches.
+- git branch <branch-name>
+  Creates a new branch.
+- git branch -d <branch-name>
+  Deletes a branch.
+
+Behavior change:
+- With no arguments, it only lists branches.
+- With a branch name, it creates a branch.
+
+
+git checkout
+-------------
+Used to switch between branches or restore files.
+
+Common usage:
+- git checkout <branch-name>
+  Switches to an existing branch.
+- git checkout -b <branch-name>
+  Creates a new branch and switches to it.
+
+Behavior change:
+- With -b, it creates a branch.
+- Without -b, it only switches branches.
+
+
+git pull
+--------
+Fetches changes from a remote repository and merges them into the current branch.
+
+Common usage:
+- git pull
+  Pulls from the default remote and branch.
+- git pull <remote> <branch>
+  Pulls from a specific remote and branch (e.g., upstream main).
+
+Behavior change:
+- With no arguments, Git uses default tracking info.
+- With arguments, Git pulls from the specified location.
+
+
+git push
+--------
+Uploads local commits to a remote repository.
+
+Common usage:
+- git push
+  Pushes to the default remote and branch.
+- git push -u <remote> <branch>
+  Pushes and sets upstream tracking (used the first time).
+
+Behavior change:
+- The -u flag sets future default behavior for git push.
+
+
+git merge
+---------
+Combines changes from another branch into the current branch.
+
+Common usage:
+- git merge <branch-name>
+  Merges the specified branch into the current branch.
+
+Notes:
+- May create a merge commit if histories diverge.
+- May fast-forward if no divergence exists.
+
+
+git rebase
+----------
+Reapplies commits on top of another base commit.
+
+Common usage:
+- git rebase <branch-name>
+  Moves the current branch’s commits on top of another branch.
+
+Notes:
+- Rewrites commit history.
+- Should not be used on shared branches unless you know what you're doing.
+
+
+git fetch
+---------
+Downloads changes from a remote repository without modifying local branches.
+
+Common usage:
+- git fetch
+  Fetches from all remotes.
+- git fetch <remote>
+  Fetches from a specific remote (e.g., upstream).
+
+Notes:
+- Safe command: never changes working files.
+- Used to see what has changed before merging.
