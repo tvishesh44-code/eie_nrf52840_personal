@@ -115,3 +115,61 @@ Common usage:
 Notes:
 - Safe command: never changes working files.
 - Used to see what has changed before merging.
+
+Additional Git Commands
+
+git add
+-------
+Adds files or changes to the staging area so they will be included in the next commit.
+
+Common usage:
+- git add <file>
+  Stages a specific file.
+- git add .
+  Stages all modified and untracked files in the current directory.
+
+Notes:
+- Changes must be staged with git add before they can be committed.
+
+
+git status
+----------
+Shows the current state of the working directory and staging area.
+
+Common usage:
+- git status
+  Displays which files are untracked, modified, or staged.
+
+Notes:
+- Files in red are unstaged changes.
+- Files in green are staged changes.
+
+
+git log
+-------
+Displays the commit history for the current branch.
+
+Common usage:
+- git log
+  Shows full commit history with author, date, and message.
+- git log --oneline
+  Shows a condensed, one-line-per-commit history.
+
+Notes:
+- The most recent commit is shown at the top.
+
+
+Note on `git push -u <remote> <branch>`
+--------------------------------------
+The -u (or --set-upstream) option sets a tracking relationship between the local branch
+and the remote branch.
+
+Example:
+- git push -u origin lesson2
+
+After this is run once:
+- git push
+- git pull
+
+will automatically use origin/lesson2 without needing to specify the remote or branch.
+
