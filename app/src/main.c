@@ -55,21 +55,33 @@ int main(void) {
         return ret3;
     }
 
-    int count = 0; 
-    
+    int index = 0; 
+
     while (1) {
-       /* LED0 toggles every 500 ms */
-        gpio_pin_toggle_dt(&led0);
+    /* Turn all LEDs off */
+    gpio_pin_set_dt(&led0, 0);
+    gpio_pin_set_dt(&led1, 0);
+    gpio_pin_set_dt(&led2, 0);
+    gpio_pin_set_dt(&led3, 0);
 
-    /* Other LEDs toggle every 1000 ms */
-        if (count % 2 == 0) {
-        gpio_pin_toggle_dt(&led1);
-        gpio_pin_toggle_dt(&led2);
-        gpio_pin_toggle_dt(&led3);
-        }
+    /* Turn on exactly one LED */
+    switch (index) {
+    case 0:
+        gpio_pin_set_dt(&led0, 1);
+        break;
+    case 1:
+        gpio_pin_set_dt(&led1, 1);
+        break;
+    case 2:
+        gpio_pin_set_dt(&led2, 1);
+        break;
+    case 3:
+        gpio_pin_set_dt(&led3, 1);
+        break;
+    }
 
-        count++;
-        k_msleep(500);
+    index = (index + 1) % 4;
+    k_msleep(500);
     }
 
     return 0;
