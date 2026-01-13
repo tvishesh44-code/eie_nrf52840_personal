@@ -55,12 +55,21 @@ int main(void) {
         return ret3;
     }
 
+    int count = 0; 
+    
     while (1) {
+       /* LED0 toggles every 500 ms */
         gpio_pin_toggle_dt(&led0);
+
+    /* Other LEDs toggle every 1000 ms */
+        if (count % 2 == 0) {
         gpio_pin_toggle_dt(&led1);
         gpio_pin_toggle_dt(&led2);
         gpio_pin_toggle_dt(&led3);
-        k_msleep(1000);
+        }
+
+        count++;
+        k_msleep(500);
     }
 
     return 0;
