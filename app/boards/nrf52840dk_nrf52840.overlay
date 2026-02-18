@@ -1,3 +1,4 @@
+
 / {
     pwmleds {
         compatible = "pwm-leds";
@@ -24,6 +25,14 @@
         pwm-led1 = &pwm_led1;
         pwm-led2 = &pwm_led2;
         pwm-led3 = &pwm_led3;
+    };
+
+    zephyr,user {
+        dcx_gpios = <&gpio1 11 GPIO_ACTIVE_HIGH>;
+    };
+
+    arduino_spi {
+        cs-gpios = <&gpio1 12 GPIO_ACTIVE_LOW>;
     };
 };
 

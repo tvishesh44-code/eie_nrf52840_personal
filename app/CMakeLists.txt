@@ -12,3 +12,4 @@ project(app LANGUAGES C)
 zephyr_include_directories(src)
 
 target_sources(app PRIVATE src/main.c)
+include_directories(${ZEPHYR_BASE}/modules/lib/gui/lvgl)
